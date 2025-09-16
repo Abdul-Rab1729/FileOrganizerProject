@@ -13,7 +13,7 @@ with open(CATEGORIES_FILE, "r") as f:
     CATEGORIES_DICT = json.load(f)
 
 def organize_files(folder_path):
-    log_file = os.path.join(folder_path, LOG_FILE_NAME)
+    log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE_NAME)
 
     for category in list(CATEGORIES_DICT.keys())+[OTHERS_CATEGORY]:
         folder_path_category = os.path.join(folder_path,category)
